@@ -230,14 +230,16 @@ onMounted(() => {
 
 <style scoped>
 swiper-container {
-  /* Variabel Dasar Swiper */
-  --swiper-pagination-bullet-inactive-color: #ffffff;
+  /* --swiper-pagination-bullet-inactive-color: #ffffff;
   --swiper-pagination-bullet-inactive-opacity: 0.3;
-  --swiper-pagination-color: #fbbf24; /* amber-400 */
-  
-  /* Ukuran Bullets */
-  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-color: #fbbf24; */
+  /* --swiper-pagination-bottom: -30px; */
+  /* padding-bottom: 60px; */
+  /* --swiper-pagination-bullet-size: 12px;
   --swiper-pagination-bullet-width: 12px;
-  --swiper-pagination-bullet-horizontal-gap: 6px;
+  --swiper-pagination-bullet-horizontal-gap: 6px; */
+}
+swiper-slide {
+  height: auto;
 }
 </style>
