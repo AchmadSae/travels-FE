@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mx-auto px-4">
+  <div class="w-full mx-auto">
     <div class="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] p-6 md:p-8 flex flex-col lg:flex-row items-end gap-6 border border-gray-50">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow w-full">
         <BaseInput
