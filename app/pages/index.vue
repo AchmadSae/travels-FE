@@ -5,6 +5,7 @@
       <LazyHomeBenefit hydrate-on-visible />
     </div>
     <LazyHomeFeedback hydrate-on-visible />
+    <LazyHomeBantuan hydrate-on-visible />
   </div>
 </template>
 

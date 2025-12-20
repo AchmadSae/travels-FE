@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-[#414D55] w-full text-white">
-    <div class="flex gap-7 md:gap-14 flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+  <div class="bg-[#434D54] w-full text-white">
+    <div class="flex gap-7 md:gap-14 flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-28">
       <div class="max-sm:flex-col gap-4 flex justify-between items-center">
         <div class="flex flex-col gap-2">
           <div class="text-2xl md:text-4xl">
