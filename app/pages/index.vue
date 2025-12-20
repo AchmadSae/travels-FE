@@ -107,14 +107,14 @@
           </div>
           <div>
             <div class="flex gap-3 max-sm:justify-between">
-              <button class="review-prev border border-slate-700 hover:bg-slate-800 px-5 py-2 rounded-lg flex items-center gap-2 transition-all disabled:opacity-30">
+              <button class="prev-el border border-slate-700 hover:bg-slate-800 px-5 py-2 rounded-lg flex items-center gap-2 transition-all disabled:opacity-30">
                 <Icon
                   name="heroicons:chevron-left"
                   class="w-5 h-5"
                 />
                 <span>Previous</span>
               </button>
-              <button class="review-next bg-slate-800 border border-slate-700 hover:bg-slate-700 px-5 py-2 rounded-lg flex items-center gap-2 transition-all">
+              <button class="next-el bg-slate-800 border border-slate-700 hover:bg-slate-700 px-5 py-2 rounded-lg flex items-center gap-2 transition-all">
                 <span>Next</span>
                 <Icon
                   name="heroicons:chevron-right"
@@ -128,7 +128,6 @@
         <ClientOnly>
           <swiper-container
             ref="containerRef"
-            :autoplay="true"
             :loop="true"
             :slides-per-view="3"
             :space-between="20"
@@ -138,7 +137,8 @@
             }"
             :pagination="{
               clickable: true,
-              el: '.custom-dots',
+              enabled: true,
+              type: 'bullets',
             }"
             :breakpoints="{
               768: { slidesPerView: 2 },
@@ -190,7 +190,6 @@
               </div>
             </swiper-slide>
           </swiper-container>
-          <div class="custom-dots flex justify-center gap-3 mt-10" />
         </ClientOnly>
       </div>
     </div>
@@ -198,11 +197,14 @@
 </template>
 
 <script setup lang="ts">
+import { useSwiper } from '#imports'
+import { ref } from 'vue'
+
 definePageMeta({
   layout: 'default',
 })
-const containerRef = ref(null)
-const slides = ref(Array.from({ length: 6 }))
+const containerRef = ref < any > (null)
+const slides = ref(Array.from({ length: 10 }))
 const swiper = useSwiper(containerRef, {
   effect: 'creative',
   loop: true,
@@ -222,16 +224,20 @@ const swiper = useSwiper(containerRef, {
 })
 
 onMounted(() => {
-  console.log(swiper.instance)
+  console.log('swiper')
 })
 </script>
 
-<style>
-/* Styling agar dots pagination berwarna putih bulat sesuai gambar */
-.custom-dots .swiper-pagination-bullet {
-  @apply w-3 h-3 bg-white opacity-40 rounded-full transition-all;
-}
-.custom-dots .swiper-pagination-bullet-active {
-  @apply opacity-100 scale-125;
+<style scoped>
+swiper-container {
+  /* Variabel Dasar Swiper */
+  --swiper-pagination-bullet-inactive-color: #ffffff;
+  --swiper-pagination-bullet-inactive-opacity: 0.3;
+  --swiper-pagination-color: #fbbf24; /* amber-400 */
+  
+  /* Ukuran Bullets */
+  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-horizontal-gap: 6px;
 }
 </style>
