@@ -106,9 +106,6 @@
 import { useSwiper } from '#imports'
 import { ref } from 'vue'
 
-definePageMeta({
-  layout: 'default',
-})
 const containerRef = ref < any > (null)
 const slides = ref(Array.from({ length: 10 }))
 const swiper = useSwiper(containerRef, {

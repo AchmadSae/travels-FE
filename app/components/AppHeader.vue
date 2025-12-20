@@ -43,13 +43,12 @@
         </div>
 
         <div class="flex items-center">
-          <button class="hidden md:flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md transition-colors duration-200 ml-4">
-            <Icon
-              name="fluent:person-support-32-filled"
-              class="w-5 h-5"
+          <div class="hidden md:flex">
+            <BaseButton
+              label="Konsultasi"
+              icon-name="fluent:person-support-32-filled"
             />
-            <span>Konsultasi</span>
-          </button>
+          </div>
 
           <div class="flex md:hidden">
             <button
@@ -146,7 +145,7 @@ import { useRoute } from '#app'
 const navData = [
   { name: 'UB Tours', href: '/ub-tours' },
   { name: 'Wisata Halal', href: '/wisata-halal' },
-  { name: 'Promo & Paket', href: '/promo-paket' },
+  { name: 'Promo & Paket', href: '/promo' },
   { name: 'Agen Resmi', href: '/agen-resmi' },
   { name: 'Berita dan Artikel', href: '/artikel' },
 ]
