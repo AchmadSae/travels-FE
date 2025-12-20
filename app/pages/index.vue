@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
       <div class="md:h-screen flex flex-col gap-7 pt-36 md:pt-20 items-center justify-center">
         <div class="text-2xl md:text-4xl font-bold text-[#F8A401]">
           UB Islamic Vacation
