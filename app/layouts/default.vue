@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-600">
+  <div class="bg-gray-400">
     <AppHeader />
     <slot />
     <!-- <AppFooter /> -->
