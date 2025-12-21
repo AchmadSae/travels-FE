@@ -1,9 +1,5 @@
 <template>
   <div class="">
-    <AgenBanner />
-    <div>
-      <AgenMap />
-    </div>
   </div>
 </template>
 

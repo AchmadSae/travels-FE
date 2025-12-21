@@ -143,8 +143,8 @@ import { ref, computed, watch } from 'vue'
 import { useRoute } from '#app'
 
 const navData = [
-  { name: 'UB Tours', href: '/ub-tours' },
-  { name: 'Wisata Halal', href: '/wisata-halal' },
+  { name: 'UB Tours', href: '/' },
+  { name: 'Wisata Halal', href: '/wisata' },
   { name: 'Promo & Paket', href: '/promo' },
   { name: 'Agen Resmi', href: '/agen' },
   { name: 'Berita dan Artikel', href: '/artikel' },
