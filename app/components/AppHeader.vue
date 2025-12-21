@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-white shadow-md z-40 fixed top-0 w-full">
+  <nav class="bg-white shadow-md z-[1100] fixed top-0 w-full">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <div class="flex-shrink-0">
@@ -146,7 +146,7 @@ const navData = [
   { name: 'UB Tours', href: '/ub-tours' },
   { name: 'Wisata Halal', href: '/wisata-halal' },
   { name: 'Promo & Paket', href: '/promo' },
-  { name: 'Agen Resmi', href: '/agen-resmi' },
+  { name: 'Agen Resmi', href: '/agen' },
   { name: 'Berita dan Artikel', href: '/artikel' },
 ]
 

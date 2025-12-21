@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
+    '@nuxtjs/leaflet',
   ],
   devtools: { enabled: true },
   compatibilityDate: '2025-07-15',
