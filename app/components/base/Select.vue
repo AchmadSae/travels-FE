@@ -38,7 +38,6 @@
 </template>
 
 <script setup lang="ts">
-// Menggunakan interface untuk type-safety sesuai pengalaman TypeScript Anda
 interface Option {
   label: string
   value: string | number
