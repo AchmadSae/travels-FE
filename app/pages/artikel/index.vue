@@ -10,7 +10,7 @@
           />
         </div>
         <div class="col-span-1 max-sm:hidden" />
-        <div class="col-span-3 flex flex-col gap-6">
+        <div class="col-span-3 flex flex-col gap-8">
           <ArtikelCategory />
           <ArtikelTag />
         </div>

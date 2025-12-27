@@ -26,10 +26,10 @@ function handleTagClick(tag: string) {
 </script>
 
 <template>
-  <section class="w-full py-12 px-6 flex justify-center items-center">
+  <section class="w-full flex justify-center items-center">
     <div class="max-w-2xl w-full">
       
-      <h2 class="text-2xl md:text-4xl font-bold text-[#2d2a3e] mb-8">
+      <h2 class="text-2xl md:text-4xl font-bold text-[#2d2a3e] mb-6">
         All Tags
       </h2>
 
