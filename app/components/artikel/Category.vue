@@ -15,7 +15,7 @@
           class="w-7 h-7"
         />
       </div>
-      <span class="text-lg font-bold md:text-2xl">Tauhid</span>
+      <span class="text-lg font-semibold md:text-2xl">Tauhid</span>
     </div>
   </div>
 </template>
