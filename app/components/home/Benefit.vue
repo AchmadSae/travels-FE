@@ -37,7 +37,7 @@
         <div
           v-for="value in [1, 1, 1, 1]"
           :key="value"
-          class="flex flex-col md:flex-row gap-4 max-sm:justify-center max-sm:items-center max-w-min"
+          class="flex flex-col md:flex-row gap-4 max-sm:justify-center max-sm:items-center max-w-min p-4"
         >
           <Icon
             name="fluent:person-support-32-filled"
