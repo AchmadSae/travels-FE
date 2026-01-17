@@ -10,9 +10,9 @@
         </div>
       </div>
     </div>
-    <div class="md:max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-      <div class="grid gap-8 md:grid-cols-3 place-items-center place-content-center justify-center items-center">
-        <PromoItem
+    <div class="md:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <div class="grid gap-8 grid-cols-1 md:grid-cols-3 place-items-center place-content-center justify-center items-center">
+        <!-- <PromoItem
           v-for="value in [1, 1, 1, 1, 1, 1, 1]"
           :key="value"
           category="UMROH EXCLUSIVE"
@@ -20,6 +20,16 @@
           price="254.99"
           image-src="https://callistatour.com/data/img/tour/37f7c82f-2a27-4718-8461-79ecda53e57a.jpg"
           :details="detailPaket"
+        /> -->
+        <PromoCard
+          v-for="value in [1, 1, 1, 1, 1, 1, 1]"
+          :key="value"
+          :title="promoData.title"
+          :discount-percentage="promoData.discountPercentage"
+          :original-price="promoData.originalPrice"
+          :discounted-price="promoData.discountedPrice"
+          :features="promoData.features"
+          :image="promoData.image"
         />
       </div>
     </div>
@@ -33,6 +43,19 @@ const detailPaket = [
   { label: 'Quantity', value: '1 Orang' },
   { label: 'Destinasi', value: 'Madinah' },
 ]
+const promoData = {
+  title: 'Ziarah Makam Walisongo',
+  discountPercentage: '10%',
+  originalPrice: 'Rp. 4.000.000,00',
+  discountedPrice: 'Rp. 3.000.000,00',
+  features: [
+    'Akomodasi konsumsi',
+    'Bag travels',
+    'Kitab Doa',
+  ],
+  // Pastikan URL gambar valid
+  image: '/detail_1.png',
+}
 </script>
 
 <style scoped>
