@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-white rounded-lg shadow-xl overflow-hidden p-6 md:p-8 flex flex-col md:flex-row gap-8 border border-gray-100">
+  <div 
+  @click="$router.push(`/promo/${title}`)"
+  class="bg-white rounded-lg shadow-xl overflow-hidden p-6 md:p-8 flex flex-col md:flex-row gap-8 border border-gray-100">
     
     <div class="flex-1 space-y-2 text-xs">
       <span class="text-sky-500 font-bold tracking-wider text-sm uppercase">
