@@ -144,7 +144,7 @@ import { useRoute } from '#app'
 
 const navData = [
   { name: 'UB Tours', href: '/' },
-  { name: 'Wisata Halal', href: '/wisata' },
+  // { name: 'Wisata Halal', href: '/wisata' },
   { name: 'Promo & Paket', href: '/promo' },
   { name: 'Agen Resmi', href: '/agen' },
   { name: 'Berita dan Artikel', href: '/artikel' },
