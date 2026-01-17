@@ -4,6 +4,6 @@
     <main>
       <slot />
     </main>
-    <LazyAppFooter hydrate-on-visible="" />
+    <LazyAppFooter hydrate-on-visible />
   </div>
 </template>
