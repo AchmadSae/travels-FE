@@ -1,6 +1,10 @@
 <template>
   <div class="bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 mt-32 md:mt-40">
+    <BookingForm
+      v-if="showModal"
+      @close="showModal = false"
+    />
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-36 mt-32 md:mt-40">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
           id="left-sect"
@@ -24,7 +28,9 @@
           <div class="flex justify-center my-10">
             <BaseButton
               label="Daftar Sekarang"
+              class="py-4 px-4"
               icon-name="fluent:airplane-take-off-24-regular"
+              @click="showModal = true"
             />
           </div>
           <div class="flex flex-col gap-4">
@@ -114,6 +120,7 @@
 </template>
 
 <script setup lang="ts">
+const showModal = ref(false)
 const persyaratan = [
   'Pas Foto background putih, ukuran 4 x 6 = 7 lembar',
   'Paspor asli dengan nama 2 kata, contoh: Mohammad Abdul (paspor berlaku minimal 12 bulan saat keberangkatan)',
