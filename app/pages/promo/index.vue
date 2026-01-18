@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-      <div class="flex flex-col gap-7 pt-36 md:pb-36 md:mt-20 items-center justify-center">
+      <div class="flex flex-col gap-7 pt-36 md:pb-36 md:pt-60 items-center justify-center">
         <div class="text-2xl text-center md:text-4xl font-bold text-white md:max-w-md">
           Wujudkan Liburan Islamic Bersama Kami
         </div>
@@ -37,6 +37,13 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  style: {
+    backgroundImage: `url('/bg-promo.webp')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }
+})
 const detailPaket = [
   { label: 'Paket', value: 'Reguler' },
   { label: 'Lama', value: '7 hari' },

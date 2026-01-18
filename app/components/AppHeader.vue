@@ -1,5 +1,10 @@
 <template>
-  <nav class="bg-white shadow-md z-[1100] fixed top-0 w-full">
+  <nav
+    :class="[
+      'fixed top-0 w-full z-[1100] transition-colors duration-300',
+      isScrolled ? 'bg-white shadow-md' : 'bg-transparent shadow-none',
+    ]"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <div class="flex-shrink-0">
@@ -168,7 +173,20 @@ const navItems = computed(() => {
     current: item.href === route.path,
   }))
 })
+const isScrolled = ref(false)
 
+const handleScroll = () => {
+  // Jika scroll lebih dari 10px, ubah state jadi true
+  isScrolled.value = window.scrollY > 10
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 watch(
   () => route.path,
   () => {
