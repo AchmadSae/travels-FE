@@ -38,11 +38,12 @@
 
 <script setup lang="ts">
 definePageMeta({
+  layout: 'default',
   style: {
     backgroundImage: `url('/bg-promo.webp')`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-  }
+  },
 })
 const detailPaket = [
   { label: 'Paket', value: 'Reguler' },

@@ -12,6 +12,12 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'default',
+  // style: {
+  //   backgroundImage: `url('/bg-home-1.webp')`,
+  //   backgroundSize: 'contain',
+  //   backgroundPosition: 'top',
+  //   backgroundRepeat: 'no-repeat',
+  // },
 })
 </script>
 
