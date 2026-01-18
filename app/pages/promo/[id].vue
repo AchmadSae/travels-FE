@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="">
     <BookingForm
       v-if="showModal"
       @close="showModal = false"
@@ -99,7 +99,7 @@
           </div>
         </div>
         <div>
-          <div class="w-full h-8 md:h-10 bg-[#46715F] mb-4" />
+          <div class="w-full h-8 md:h-10 bg-[#D32600] mb-4" />
           <div class="flex flex-col gap-4">
             <div class="text-2xl md:text-4xl font-bold text-[#014F5A]">
               Biaya Tidak Termasuk
@@ -120,6 +120,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'default',
+  class: 'bg-white',
+})
 const showModal = ref(false)
 const persyaratan = [
   'Pas Foto background putih, ukuran 4 x 6 = 7 lembar',

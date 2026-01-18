@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-to-br from-white to-gray-400">
+  <div class="">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="md:max-w-2xl mx-auto min-h-screen flex flex-col gap-7 pt-36 md:pt-20 items-center justify-center">
         <div class="flex gap-6 md:gap-24 items-center">
@@ -37,7 +37,9 @@
 </template>
 
 <script setup lang="ts">
-
+definePageMeta({
+  class: 'bg-gradient-to-b from-white to-[#414D55]',
+})
 </script>
 
 <style scoped>

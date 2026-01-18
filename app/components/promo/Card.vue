@@ -12,7 +12,9 @@ const props = defineProps<PromoProps>();
 </script>
 
 <template>
-  <div class="bg-white w-full rounded-[1.5rem] shadow-lg border border-gray-100 p-5 flex items-stretch gap-4 h-full hover:shadow-xl transition-shadow duration-300 relative overflow-hidden group">
+  <div 
+  @click="$router.push(`/promo/${title}`)"
+  class="bg-white hover:cursor-pointer w-full rounded-[1.5rem] shadow-lg border border-gray-100 p-5 flex items-stretch gap-4 h-full hover:shadow-xl transition-shadow duration-300 relative overflow-hidden group">
     
     <div class="flex-1 flex flex-col justify-between min-w-0">
       

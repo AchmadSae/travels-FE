@@ -44,6 +44,7 @@ definePageMeta({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
+  class: 'bg-gradient-to-b from-white to-[#414D55]',
 })
 const detailPaket = [
   { label: 'Paket', value: 'Reguler' },
