@@ -15,6 +15,9 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  class: 'bg-gradient-to-b from-white to-[#414D55]',
+})
 const agents = [
   {
     name: 'Barokah UB Agent',

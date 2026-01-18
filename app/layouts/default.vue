@@ -6,6 +6,7 @@ const route = useRoute()
   <div
     class="bg-gray-400"
     :style="route.meta.style"
+    :class="route.meta.class"
   >
     <AppHeader />
     <main>
