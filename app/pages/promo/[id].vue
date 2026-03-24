@@ -20,9 +20,7 @@
               variations for seamless design customization.
             </span>
             <span>
-              A modern UI Kit for building custom mapping experiences inspired
-              by Google Maps. Includes pre-made components, styles, and screen
-              variations for seamless design customization.
+              Islam is the second largest religion in the world, with over 1.8 billion followers. It is a monotheistic faith that believes in one God (Allah) and follows the teachings of the Prophet Muhammad. Islam emphasizes the importance of faith, prayer, charity, fasting, and pilgrimage to Mecca (Hajj) as the Five Pillars of Islam. Muslims around the world practice their faith through daily prayers, reading the Quran, and following the teachings of the Prophet Muhammad.  
             </span>
           </div>
           <div class="flex justify-center my-10">

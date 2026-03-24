@@ -16,4 +16,10 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: 'https://localhost:8080/api',
+      apiClientHeader: 'DG-CL-UB-2026021111'
+    }
+  }
 })

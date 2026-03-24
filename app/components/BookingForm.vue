@@ -102,6 +102,27 @@ const submitForm = () => {
               </div>
             </div>
 
+            
+            <div class="space-y-6">
+              <div class="relative hidden">
+                <input
+                v-model="form.voucher"
+                type="text"
+                placeholder="KODE VOUCHER"
+                class="w-full border border-blue-600 rounded-lg px-4 py-3 pr-24 uppercase focus:ring-2 focus:ring-blue-500 outline-none transition"
+                >
+                <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#1E4FD9] hover:bg-blue-800 text-white text-xs font-bold px-5 py-2 rounded transition">
+                  REDEEM
+                </button>
+              </div>
+              <textarea
+              v-model="form.catatan"
+              rows="4"
+              placeholder="Catatan Khusus ( optional )"
+              class="w-full border border-blue-500 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition resize-none"
+              />
+            </div>
+            
             <div class="text-center mb-6">
               <p class="text-xs text-gray-500 italic mb-4">
                 *Data lebih dari satu, wajib menyertakan nomor affiliasi
@@ -110,27 +131,6 @@ const submitForm = () => {
                 <span>+</span> Tambah Jamaah
               </button>
             </div>
-
-            <div class="space-y-6">
-              <div class="relative">
-                <input
-                  v-model="form.voucher"
-                  type="text"
-                  placeholder="KODE VOUCHER"
-                  class="w-full border border-blue-600 rounded-lg px-4 py-3 pr-24 uppercase focus:ring-2 focus:ring-blue-500 outline-none transition"
-                >
-                <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#1E4FD9] hover:bg-blue-800 text-white text-xs font-bold px-5 py-2 rounded transition">
-                  REDEEM
-                </button>
-              </div>
-              <textarea
-                v-model="form.catatan"
-                rows="4"
-                placeholder="Catatan Khusus ( optional )"
-                class="w-full border border-blue-500 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none transition resize-none"
-              />
-            </div>
-
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
               <label class="flex items-center gap-3 cursor-pointer select-none group">
                 <input

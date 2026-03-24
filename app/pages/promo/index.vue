@@ -34,6 +34,7 @@
       </div>
     </div>
   </div>
+<LazyAppFooter hydrate-on-visible />
 </template>
 
 <script setup lang="ts">

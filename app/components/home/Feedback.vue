@@ -54,7 +54,7 @@
             class=" gap-4 max-w-5xl justify-center items-center mx-auto"
           >
             <swiper-slide
-              v-for="(slide, idx) in slides"
+              v-for="(slide, idx) in itemFeedbacks"
               :key="idx"
               style=""
             >
@@ -103,31 +103,46 @@
 </template>
 
 <script setup lang="ts">
-import { useSwiper } from '#imports'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-const containerRef = ref < any > (null)
-const slides = ref(Array.from({ length: 10 }))
-const swiper = useSwiper(containerRef, {
-  effect: 'creative',
-  loop: true,
-  autoplay: {
-    delay: 1000,
-  },
-  creativeEffect: {
-    prev: {
-      shadow: true,
-      translate: [0, 0, -400],
-    },
-    next: {
-      shadow: true,
-      translate: [0, 0, -400],
-    },
-  },
-})
+interface FeedbackItem {
+  id: number
+  name: string
+  message: string
+  rating: number
+  // Add other fields based on your API response
+}
+
+interface ApiResponse {
+  data: FeedbackItem[]
+  // Add pagination fields if needed: total, page, etc.
+}
+
+const itemFeedbacks = ref<FeedbackItem[]>([])
+const isLoading = ref(true)
+const error = ref<string | null>(null)
+
+const fetchFeedbacks = async () => {
+  try {
+    const config = useRuntimeConfig()
+    const baseUrl = config.public.apiBaseUrl
+    const response = await $fetch<ApiResponse>(`${baseUrl}/feedbacks?page=1&per_page=15`, {
+      headers: {
+        'X-CLIENT-HEADER': config.public.apiClientHeader
+      }
+    })
+    console.log(response.data)
+    itemFeedbacks.value = response.data
+  } catch (err) {
+    error.value = err instanceof Error ? err.message : 'An error occurred'
+    console.error('Failed to fetch feedbacks:', err)
+  } finally {
+    isLoading.value = false
+  }
+}
 
 onMounted(() => {
-  console.log('swiper')
+  fetchFeedbacks()
 })
 </script>
 
