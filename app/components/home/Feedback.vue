@@ -63,13 +63,13 @@
               >
                 <div class="flex items-center gap-4 mb-4">
                   <NuxtImg
-                    src="https://i.redd.it/e3zaq33rfn791.jpg"
+                    src="/unatachment-review.jpg"
                     class="w-16 h-16 rounded-lg object-cover"
                   />
 
                   <div class="flex gap-1 text-amber-400">
                     <svg
-                      v-for="val in [1, 1, 1, 1, 1]"
+                      v-for="val in itemFeedbacks[idx].rating"
                       :key="val"
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -85,14 +85,35 @@
                   </div>
                 </div>
 
-                <h3 class="text-2xl font-bold text-slate-900 mb-3">
-                  Floyd Miles
+                <h3 class="text-2xl font-bold text-slate-900 mb-1">
+                  {{ slide.subject || slide.email }}
                 </h3>
 
-                <p class="text-slate-600 text-base leading-relaxed line-clamp-3">
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-                  sint. Velit officia consequat duis enim v...
+                <p class="text-sm text-slate-500 mb-3">
+                  {{ slide.email }} • {{ new Date(slide.created_at).toLocaleDateString() }}
                 </p>
+
+                <p class="text-slate-600 text-base leading-relaxed line-clamp-3">
+                  {{ slide.message }}
+                </p>
+
+                <div class="flex gap-1 mt-3">
+                  <svg
+                    v-for="i in 5"
+                    :key="i"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    :fill="i <= slide.rating ? 'currentColor' : 'none'"
+                    :stroke="i <= slide.rating ? 'currentColor' : '#cbd5e1'"
+                    class="w-5 h-5"
+                  >
+                    <path
+                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.007Z"
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
               </div>
             </swiper-slide>
           </swiper-container>
@@ -106,16 +127,24 @@
 import { ref, onMounted } from 'vue'
 
 interface FeedbackItem {
-  id: number
-  name: string
+  id: string
+  subject: string
   message: string
   rating: number
-  // Add other fields based on your API response
+  email: string
+  attachment: string | null
+  created_at: string
+  updated_at: string
+  media: unknown[]
+  replay: Record<string, unknown>
 }
 
 interface ApiResponse {
-  data: FeedbackItem[]
-  // Add pagination fields if needed: total, page, etc.
+  status: number
+  message: string
+  data: {
+    feedbacks: FeedbackItem[]
+  }
 }
 
 const itemFeedbacks = ref<FeedbackItem[]>([])
@@ -126,13 +155,19 @@ const fetchFeedbacks = async () => {
   try {
     const config = useRuntimeConfig()
     const baseUrl = config.public.apiBaseUrl
-    const response = await $fetch<ApiResponse>(`${baseUrl}/feedbacks?page=1&per_page=15`, {
+    const response = await $fetch<ApiResponse>(`${baseUrl}/feedbacks`, {
       headers: {
-        'X-CLIENT-HEADER': config.public.apiClientHeader
+        'X-CLIENT-ID': config.public.apiClientHeader
       }
     })
-    console.log(response.data)
-    itemFeedbacks.value = response.data
+
+    const feedbacks =
+      response?.data?.feedbacks ??
+      (response as unknown as { feedbacks?: FeedbackItem[] }).feedbacks ??
+      []
+
+    console.log('feedback response debug: ', feedbacks)
+    itemFeedbacks.value = feedbacks
   } catch (err) {
     error.value = err instanceof Error ? err.message : 'An error occurred'
     console.error('Failed to fetch feedbacks:', err)

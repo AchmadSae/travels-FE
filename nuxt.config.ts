@@ -18,7 +18,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBaseUrl: 'https://localhost:8080/api',
+      // Use HTTP for local backend (or HTTPS with valid cert).
+      apiBaseUrl: 'http://localhost:8081/api',
       apiClientHeader: 'DG-CL-UB-2026021111'
     }
   }
